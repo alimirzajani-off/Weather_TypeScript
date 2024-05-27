@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Location, WeathersData } from "./utils/types";
-import { daysOfWeek } from "./utils/variable";
 import { WeatherCurrentBox } from "./Components/Weather/WeatherCurrentBox";
-import { WeatherTemperature } from "./Components/Weather/WeatherTemperature";
+import { WeatherList } from "./Components/Weather/WeatherList";
 
 function App() {
   const [weathersData, setWeathersData] = useState<WeathersData | null>(null);
@@ -20,9 +19,7 @@ function App() {
         lon: position.coords.longitude,
       });
     });
-  }, []);
 
-  useEffect(() => {
     axios
       .get(
         `https://one-api.ir/weather/?token=${
@@ -44,25 +41,7 @@ function App() {
         setshowmore={setshowmore}
         weathersData={weathersData}
       />
-      {showmore && weathersData && (
-        <div className="flex flex-wrap justify-center mt-4">
-          {weathersData.list?.slice(1, 8).map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center shadow-md rounded-md w-28 m-2 p-2 hover:shadow-2xl bg-white "
-            >
-              <WeatherTemperature
-                day={daysOfWeek[new Date(item.dt * 1000).getDay()]}
-                icon={item?.weather[0]?.icon}
-                description={item.weather[0].description}
-                minTemp={item.temp.min}
-                maxTemp={item.temp.max}
-                horizontal={true}
-              />
-            </div>
-          ))}
-        </div>
-      )}
+      {showmore && weathersData && <WeatherList weathersData={weathersData} />}
     </div>
   );
 }
