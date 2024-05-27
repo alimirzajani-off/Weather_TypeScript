@@ -3,19 +3,18 @@ export interface WeathersData {
     name: string;
   };
   list: {
-    dt: number; // زمان پیش‌بینی (به صورت timestamp)
+    dt: number;
     temp: {
-      min: number; // دمای حداقل
-      max: number; // دمای حداکثر
+      min: number;
+      max: number;
     };
     weather: {
-      icon: string; // آیکون هوا
-      description: string; // توضیحات هوا
+      icon: string;
+      description: string;
     }[];
     wind: {
-      speed: number; // سرعت باد
+      speed: number;
     };
-    // سایر مشخصات مربوط به هوا
   }[];
 }
 

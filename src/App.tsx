@@ -6,7 +6,7 @@ import { WeatherCurrentBox } from "./Components/Weather/WeatherCurrentBox";
 import { WeatherTemperature } from "./Components/Weather/WeatherTemperature";
 
 function App() {
-  const [weathersData, setWeathersData] = useState<WeathersData | any>(null);
+  const [weathersData, setWeathersData] = useState<WeathersData | null>(null);
   const [showmore, setshowmore] = useState<boolean>(false);
   const [location, setLocation] = useState<Location>({
     lat: 35.6944,
