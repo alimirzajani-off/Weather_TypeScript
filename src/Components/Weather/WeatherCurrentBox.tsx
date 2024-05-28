@@ -17,12 +17,12 @@ interface WeatherCurrentBoxProps {
   location: Location;
 }
 
-export const WeatherCurrentBox: FC<WeatherCurrentBoxProps> = ({
+export const WeatherCurrentBox = ({
   weathersData,
   showmore,
   setshowmore,
   location,
-}) => {
+}: WeatherCurrentBoxProps) => {
   const [weatherData, setWeatherData] = useState<WeatherResult | null>(null);
 
   useEffect(() => {

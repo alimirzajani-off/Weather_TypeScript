@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { WeathersData } from "../../utils/types";
 import { WeatherTemperature } from "./WeatherTemperature";
 import { daysOfWeek } from "../../utils/variable";
@@ -7,7 +6,7 @@ interface WeatherListProps {
   weathersData: WeathersData;
 }
 
-export const WeatherList: FC<WeatherListProps> = ({ weathersData }) => {
+export const WeatherList = ({ weathersData }: WeatherListProps) => {
   return (
     <div className="flex flex-wrap justify-center mt-4">
       {weathersData.list?.slice(1, 8).map((item, index) => (

@@ -6,7 +6,7 @@ interface CurrentDateProps {
   cityName: String;
 }
 
-export const CurrentDate: FC<CurrentDateProps> = ({ cityName }) => {
+export const CurrentDate = ({ cityName }: CurrentDateProps) => {
   const [time, setTime] = useState(new Date());
   useEffect(() => {
     const timerID = setInterval(() => {

@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 interface WeatherTemperatureProps {
   description?: String;
   temp?: number;
@@ -11,7 +9,7 @@ interface WeatherTemperatureProps {
   day?: String;
 }
 
-export const WeatherTemperature: FC<WeatherTemperatureProps> = ({
+export const WeatherTemperature = ({
   minTemp,
   maxTemp,
   speed,
@@ -20,7 +18,7 @@ export const WeatherTemperature: FC<WeatherTemperatureProps> = ({
   icon,
   temp,
   day,
-}) => {
+}: WeatherTemperatureProps) => {
   return (
     <div className="flex flex-col items-center">
       {day && <>{day}</>}
