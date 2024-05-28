@@ -51,6 +51,7 @@ export const WeatherCurrentBox: FC<WeatherCurrentBoxProps> = ({
               speed={weatherData?.wind.speed}
               minTemp={weathersData?.list[0]?.temp.min}
               maxTemp={weathersData?.list[0]?.temp.max}
+              horizontal={true}
             />
           ) : (
             <p className="text-center text-sm ">در حال بروز رسانی</p>

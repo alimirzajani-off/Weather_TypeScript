@@ -45,7 +45,7 @@ export const WeatherTemperature: FC<WeatherTemperatureProps> = ({
           {speed}
         </div>
       )}
-      {horizontal ? (
+      {!horizontal ? (
         <>
           <p className="text-lg font-medium ">{Math.round(maxTemp)}°</p>
           <p className="text-sm font-light text-slate-700	">

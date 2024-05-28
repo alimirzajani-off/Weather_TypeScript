@@ -21,7 +21,7 @@ export const WeatherList: FC<WeatherListProps> = ({ weathersData }) => {
             description={item.weather[0].description}
             minTemp={item.temp.min}
             maxTemp={item.temp.max}
-            horizontal={true}
+            horizontal={false}
           />
         </div>
       ))}
